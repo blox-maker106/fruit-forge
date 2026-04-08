@@ -1,0 +1,52 @@
+type http_request_result = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type http_header = 
+ record {
+   name: text;
+   value: text;
+ };
+type TransformationOutput = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type TransformationInput = 
+ record {
+   context: blob;
+   response: http_request_result;
+ };
+type GenerationStatus = 
+ variant {
+   failed: text;
+   pending;
+   success;
+ };
+type GenerationResult = 
+ variant {
+   err: text;
+   ok: Generation;
+ };
+type GenerationRequest = 
+ record {
+   drawingBase64: text;
+   prompt: text;
+ };
+type GenerationId = nat;
+type Generation = 
+ record {
+   createdAt: int;
+   id: GenerationId;
+   imageUrl: text;
+   prompt: text;
+   status: GenerationStatus;
+ };
+service : {
+  generateDesign: (request: GenerationRequest) -> (GenerationResult);
+  getRecentGenerations: () -> (vec Generation) query;
+  transform: (input: TransformationInput) -> (TransformationOutput) query;
+}

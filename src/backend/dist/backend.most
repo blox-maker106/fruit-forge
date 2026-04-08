@@ -1,0 +1,23 @@
+// Version: 1.0.0
+type GenerationId__491903316 = Nat;
+type GenerationStatus__541016743 = {#failed : Text; #pending; #success};
+type Generation__784492871 =
+  {
+    createdAt : Int;
+    id : GenerationId__491903316;
+    imageUrl : Text;
+    prompt : Text;
+    status : GenerationStatus__541016743
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+actor {
+  stable generations :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Generation__784492871]];
+      var elementIndex : Nat__490723111
+    };
+  stable nextId : {var value : Nat};
+  stable var nextIdValue : Nat
+};

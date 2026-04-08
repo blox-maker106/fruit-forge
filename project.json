@@ -1,0 +1,21 @@
+{
+  "overview": "A phone-first drawing app where you sketch freehand on your screen, describe your vision to an AI, and get a ready-to-print cup wrap design. Draw on the canvas, snap a camera reference photo, tell the AI what you want — and download a print-ready image to wrap around your mug.",
+  "features": [
+    "Touch freehand drawing canvas with brush size and color controls",
+    "Optional phone camera reference overlay with opacity toggle",
+    "AI-powered cup wrap image generation from your drawing and description",
+    "3D cup mockup preview of the generated design",
+    "Download print-ready PNG/JPG to apply to any cup or mug"
+  ],
+  "category": "productivity",
+  "tags": [
+    "drawing",
+    "ai",
+    "cup-design",
+    "print",
+    "camera",
+    "mobile",
+    "creative"
+  ],
+  "last_updated": "2026-04-08T15:40:43.967Z"
+}
